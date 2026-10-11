@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join Camp Kaboom</title>
+<meta name="description" content="Register interest for Camp Kaboom, request a free school pilot, or just say hello.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=7">
+</head>
+<body>
+<canvas id="confetti"></canvas>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="index.html">💥 Camp <b>Kaboom</b></a>
+    <div class="links">
+      <a href="index.html">Flagship Camp</a>
+      <a href="pilot.html">School Pilot</a>
+      <a href="join.html" class="on">Join &amp; Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section style="padding-top:64px">
+  <div class="wrap">
+    <span class="eyebrow">Join &amp; contact</span>
+    <h2 class="h2" style="font-size:clamp(38px,6vw,60px)">Let’s get you <span style="color:var(--orange)">Kaboom-ready.</span></h2>
+    <p class="lead">Pick whichever fits you best. We read every message and reply within two working days.</p>
+
+    <div class="tabs" role="tablist">
+      <button data-tab="parent">👨‍👩‍👧 Parent</button>
+      <button data-tab="school">🏫 School</button>
+      <button data-tab="hello">👋 Say hi</button>
+    </div>
+
+    <!-- PARENT -->
+    <div class="panel" id="parent">
+      <div class="card formcard">
+        <form data-kind="parent">
+          <h3>Save a spot on the interest list</h3>
+          <p class="sub">You’ll hear about dates, venue and pricing first. No payment now.</p>
+          <div class="fields">
+            <div><label for="p-name">Your name</label><input id="p-name" name="parent_name" required autocomplete="name"></div>
+            <div><label for="p-phone">Phone / WhatsApp</label><input id="p-phone" name="phone" type="tel" required autocomplete="tel"></div>
+            <div class="full"><label for="p-email">Email</label><input id="p-email" name="email" type="email" required autocomplete="email"></div>
+            <div><label for="p-child">Child’s first name</label><input id="p-child" name="child_name" required></div>
+            <div><label for="p-class">Class</label><select id="p-class" name="child_class" required><option value="">Choose…</option><option>Class 4</option><option>Class 5</option></select></div>
+            <div class="full"><label for="p-school">School <span class="opt">(optional)</span></label><input id="p-school" name="school"></div>
+            <div class="full"><label for="p-diet">Allergies or dietary needs <span class="opt">(optional)</span></label><input id="p-diet" name="dietary"></div>
+            <div class="full"><label for="p-heard">How did you hear about us? <span class="opt">(optional)</span></label><select id="p-heard" name="heard_from"><option value="">Choose…</option><option>School pilot day</option><option>Friend or family</option><option>Instagram / WhatsApp</option><option>Other</option></select></div>
+            <label class="check full"><input type="checkbox" name="consent" required> I’m happy for Camp Kaboom to contact me about the camp.</label>
+          </div>
+          <button class="btn orange" type="submit">Count us in 💥</button>
+        </form>
+        <div class="done"><div class="emo">🎉</div><h3>You’re on the list!</h3><p>We’ll be in touch soon with dates and details. Ready, Set, Kaboom!</p></div>
+      </div>
+    </div>
+
+    <!-- SCHOOL -->
+    <div class="panel" id="school" hidden>
+      <div class="card formcard">
+        <form data-kind="school">
+          <h3>Request a free pilot day</h3>
+          <p class="sub">One morning, 50 students from Classes 4 &amp; 5, everything on us. <a href="pilot.html" style="color:var(--teal);font-weight:700">How it works</a></p>
+          <div class="fields">
+            <div class="full"><label for="s-school">School name</label><input id="s-school" name="school_name" required></div>
+            <div><label for="s-name">Your name</label><input id="s-name" name="contact_name" required autocomplete="name"></div>
+            <div><label for="s-role">Your role</label><input id="s-role" name="role" placeholder="e.g. Principal, Coordinator" required></div>
+            <div><label for="s-email">Email</label><input id="s-email" name="email" type="email" required autocomplete="email"></div>
+            <div><label for="s-phone">Phone</label><input id="s-phone" name="phone" type="tel" required autocomplete="tel"></div>
+            <div><label for="s-dates">Preferred dates <span class="opt">(optional)</span></label><input id="s-dates" name="preferred_dates" placeholder="Any weekday works"></div>
+            <div><label for="s-space">Outdoor space?</label><select id="s-space" name="outdoor_space"><option>Yes</option><option>Small / shared</option><option>Not sure</option></select></div>
+            <div class="full"><label for="s-notes">Anything else? <span class="opt">(optional)</span></label><textarea id="s-notes" name="notes"></textarea></div>
+          </div>
+          <button class="btn orange" type="submit">Request my pilot 🏫</button>
+        </form>
+        <div class="done"><div class="emo">🏫</div><h3>Request received!</h3><p>We’ll reach out within two working days to find a date that works.</p></div>
+      </div>
+    </div>
+
+    <!-- HELLO -->
+    <div class="panel" id="hello" hidden>
+      <div class="card formcard">
+        <form data-kind="hello">
+          <h3>Say hello</h3>
+          <p class="sub">Questions, ideas, want to volunteer as a counselor? We’d love to hear it.</p>
+          <div class="fields">
+            <div><label for="h-name">Name</label><input id="h-name" name="name" required autocomplete="name"></div>
+            <div><label for="h-email">Email</label><input id="h-email" name="email" type="email" required autocomplete="email"></div>
+            <div class="full"><label for="h-msg">Message</label><textarea id="h-msg" name="message" required></textarea></div>
+          </div>
+          <button class="btn orange" type="submit">Send 👋</button>
+        </form>
+        <div class="done"><div class="emo">💌</div><h3>Message sent!</h3><p>Thanks for reaching out. We’ll reply soon.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tinted">
+  <div class="wrap">
+    <span class="eyebrow">Good questions</span>
+    <h2 class="h2">FAQ</h2>
+    <div class="faq">
+      <details><summary>Who can join the flagship camp?</summary><p>Any child in Class 4 or 5 (roughly ages 9 to 11), from any school. Mixing schools is part of the fun.</p></details>
+      <details><summary>When and where is it?</summary><p>Three consecutive days over winter break, 9:30 AM to 1:30 PM. The venue and dates go to the interest list first.</p></details>
+      <details><summary>How much does it cost?</summary><p>One all-inclusive price for all three days: staff, materials, snacks, passport, certificates and keepsakes. Pricing is shared with the interest list first.</p></details>
+      <details><summary>Is it safe?</summary><p>Every counselor is background-verified per POCSO Act requirements, there’s 1 counselor per 10 kids, first-aid on site every day, and nut-free snacks as standard.</p></details>
+      <details><summary>What exactly will they do?</summary><p>Build, explore, trade and team up across three themed worlds, with a new hands-on challenge every day.</p></details>
+      <details><summary>Will there be photos?</summary><p>Only with your explicit consent. Never without it.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">💥 Camp <b>Kaboom</b></div>
+  <nav><a href="index.html">Flagship Camp</a><a href="pilot.html">School Pilot</a><a href="join.html">Join &amp; Contact</a></nav>
+  <p>© 2026 Camp Kaboom · Ready, Set, Kaboom!</p>
+</footer>
+
+<script src="assets/kaboom.js?v=7"></script>
+</body>
+</html>
